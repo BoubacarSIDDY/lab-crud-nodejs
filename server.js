@@ -11,7 +11,7 @@ app.use(express.json())
 mongoose.connect(dbConfig.url).then(() => {
     console.log("Successfuly connected");
 }).catch(() => {
-    console.log("Error")
+    console.log("Error connection to the db")
 })
 
 app.get('/', async (req, res) => {
@@ -83,6 +83,6 @@ app.delete('/student/:id', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+app.listen(3333, () => {
+    console.log("Server is listening on port 3333");
 });
