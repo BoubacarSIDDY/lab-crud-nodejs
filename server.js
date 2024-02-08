@@ -20,13 +20,7 @@ app.get('/', async (req, res) => {
 
 app.post('/students', async (req, res) => {
     try{
-        var obj = {
-            name : 'Diallo',
-            lastName : 'Boubacar',
-            email : 'test@gmail.com',
-            phone : '70000000'
-        };
-        const student = await Student.create(obj)
+        const student = await Student.create(req.body)
         res.status(200).json(student)
     }catch (err){
         console.log(err.message);
